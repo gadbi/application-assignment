@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Medication</title>
+</head>
+<body>
+
+<center><h1>Medication Administration events</h1></center>
+<form action="/patient" method="get">
+	<label for="p_id">Get Patient:</label><br>
+    <input type="text" name="p_id"/>
+    <input type="submit" value="Submit"/>
+</form>
+<table id="data">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Medication</th>
+        <th>Action</th>
+        <th>Period</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in eventlist %}
+        <tr>
+          <td>{{ event[0]}}</td>
+          <td>{{ event[1] }}</td>
+          <td>{{ event[2] }}</td>
+          <td>{{ event[3] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+</body>
+</html>
